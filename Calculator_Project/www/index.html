@@ -1,0 +1,245 @@
+<html>
+<head>
+<title>Calculator</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.4.5.css">
+<script src="jquerymobile/jquery.js"></script>
+<script src="jquerymobile/jquery.mobile-1.4.5.js"></script>
+
+
+</head>
+
+<body>
+  <div data-role="page" id="pageone" data-theme="a">
+     <div data-role="header">
+        <h1>Simple Calculator</h1>
+     </div>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#" data-icon="home" >Home</a></li>
+        <li><a href="#pagetwo" data-icon="grid" >Calculator</a></li>
+        <li> <a href="#pagethree" data-icon="info">Help</a></li>
+     </ul>
+    </div>
+
+<div data-role="main" class="ui-content">
+  <p>This is a jQuery mobile exercise which provides basic mathematics operations.</p>
+</div>
+
+  <div data-role="footer">
+         <h2>Homework</h2>
+  </div>
+</div> <!--end of page-->
+
+<div data-role="page" id="pagetwo"> <!--page2-->
+
+  <div data-role="header">
+     <h1>Simple Calculator</h1>
+  </div>
+ <div data-role="navbar">
+   <ul>
+     <li><a href="#pageone" data-icon="home" >Home</a></li>
+     <li><a href="#" data-icon="grid" >Calculator</a></li>
+     <li> <a href="#pagethree" data-icon="info">Help</a></li>
+  </ul>
+ </div>
+
+ <div data-role="main" class="ui-content">
+           <div class="ui-field-contain">
+                   <label for="number1">Num1:</label>
+                   <input name="number1" id="num1" type="number">
+
+            </div>
+
+            <div class="ui-field-contain">
+              <label for="select-nativ-1">Basic operations:</label>
+                 <select name="myselect" id="myselect">
+                   <option value="+" id="add"> + </option>
+                   <option value="-" id="sub"> - </option>
+                   <option value="*" id="mul"> * </option>
+                   <option value="/" id="div"> / </option>
+                 </select>
+            <!--  <div data-role="controlgroup" data-icon="arrow-d" data-type="vertical">
+                            <button id="plus" class="ui-btn ui-btn-inline ui-corner-all ui-icon-plus ui-btn-icon-left"> + </button>
+                            <button id="minus" class="ui-btn ui-btn-inline ui-corner-all ui-icon-minus ui-btn-icon-left"> - </button>
+                            <button id="multiply" class="ui-btn ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-left"> * </button>
+                            <button id="divide" class="ui-btn ui-btn-inline ui-corner-all ui-icon-forbidden ui-btn-icon-left"> / </button>
+              </div> -->
+
+            </div>
+
+
+            <div class="ui-field-contain">
+                   <label for="number2">Num2:</label>
+                   <input name="number2" id="num2" type="number">
+            </div>
+
+            <div data-role="main" class="ui-content">
+                 <!--<button id="cal" class="ui-btn">Calculate</button>--->
+                <button><a href="#cal" id="cal" >Calculate</a>
+
+
+                </div>
+                 </div>
+
+
+
+   <div data-role="footer">
+          <h2>Homework</h2>
+   </div>
+
+
+</div> <!---end of page2-->
+
+<div data-role="page"  id="pagethree"> <!--page3-->
+
+
+  <div data-role="header">
+     <h1>Simple Calculator</h1>
+  </div>
+  <div data-role="navbar">
+   <ul>
+     <li><a href="#pageone" data-icon="home" >Home</a></li>
+     <li><a href="#pagetwo" data-icon="grid" >Calculator</a></li>
+     <li> <a href="#" data-icon="info">Help</a></li>
+  </ul>
+  </div>
+
+
+ <div data-role="main" class="ui-content">
+
+
+ </div>
+
+   <a href="#pagefour" class="ui-btn ui-icon-info ui-btn-icon-left">More info</a>
+</br></br>
+   <div data-role="footer">
+          <h2>Homework</h2>
+   </div>
+
+</div>
+
+
+
+
+<div data-role="page" data-dialog="true" id="pagefour"> <!--page4-->
+
+  <div data-role="header">
+     <h1>More info </h1>
+  </div>
+
+
+ <div data-role="main" class="ui-content">
+
+
+ </div>
+
+
+ <a href="#pageone" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Dismiss</a>
+
+
+
+</div><!--end of page 4-->
+
+
+<div data-role="page"  id="cal"> <!--page calculate-->
+
+  <div data-role="header">
+     <h1>Results</h1>
+  </div>
+  <div data-role="navbar">
+   <ul>
+     <li><a href="#pageone" data-icon="home" >Home</a></li>
+     <li><a href="#pagetwo" data-icon="grid" >Calculator</a></li>
+     <li> <a href="#pagethree" data-icon="info">Help</a></li>
+  </ul>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div class="ui-field-contain">
+
+         Operation:<p id="op"></p>
+    </div>
+
+    <div class="ui-field-contain">
+      Results:<p id="results"></p>
+
+    </div>
+
+  </div>
+
+<a href="#pagetwo" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Back</a>
+
+  <div data-role="footer">
+         <h2>Homework</h2>
+  </div>
+
+</div>
+
+
+
+<script>
+    $(document).ready(function() {
+        $("#results").toggleClass("results");
+
+
+
+
+        //Addition
+        $("#cal").click(function() {
+            var a = $("#num1").val();
+            var c =$("#myselect").val();
+            var b = $("#num2").val();
+            $("#op").html(+a +c+ +b);
+            var x = $("#op").html(+a +c+ +b);
+            if(c == '+'){
+              $("#results").html(+a + +b) =x;
+            }
+
+          });
+
+        //Subtraction
+    $("#cal").click(function() {
+           var a = $("#num1").val();
+             var c =$('#myselect').val();
+            var b = $("#num2").val();
+           $("#op").html(+a +c+ +b);
+           var x = $("#op").html(+a +c+ +b);
+           if(c == '-'){
+             $("#results").html(+a - +b) = x;
+}
+
+      });
+
+        //Multiplication
+        $("#cal").click(function() {
+            var a = $("#num1").val();
+             var c =$('#myselect').val();
+            var b = $("#num2").val();
+             $("#op").html(+a +c+ +b);
+             var x = $("#op").html(+a +c+ +b);
+             if(c == '*'){
+                 $("#results").html(+a * +b) = x;
+}
+      });
+
+        //Division
+        $("#cal").click(function() {
+         var a = $("#num1").val();
+          var c =$('#myselect').val();
+            var b = $("#num2").val();
+            $("#op").html(+a +c+ +b);
+            var x = $("#op").html(+a +c+ +b);
+            if(c == '/'){
+                $("#results").html(+a / +b) = x;
+}
+        });
+
+    });
+</script>
+
+
+
+</body>
+</html>
